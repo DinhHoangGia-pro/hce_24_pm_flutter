@@ -20,12 +20,12 @@ void main() {
               appBar: AppBar(
                   title: Image.network(
                       'https://img.freepik.com/premium-vector/ho-chi-minh-city-vietnam-skyline-with-panorama-white-background-vector-illustration-business-travel-tourism-concept-with-modern-buildings-image-banner-web-site_596401-63.jpg?w=1060')),
-              body: Column(
+              body: ListView(
                 children: [
                   ButtonSection(),
                   Container(
                     margin: const EdgeInsets.all(10.0),
-                    transform: Matrix4.rotationZ(0.02),
+                    transform: Matrix4.rotationZ(-0.02),
                     decoration: BoxDecoration(
                         color: Color(0xffe389e3),
                         borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -43,9 +43,12 @@ void main() {
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: MyStatePlusWidget(),
                   ),
-                  Column(
-                    children: [Text("Hang 1"), Text("Hang 2"), Text("Hang 3")],
-                  )
+                  Row(
+                    children: [Text("Cot 1"), Text("Cot 2"), Text("Cot 3")],
+                  ),
+                  MyStatePlusWidget(),
+                  MyStatePlusWidget(),
+                  MyStatePlusWidget(),
                 ],
               )))));
 }
