@@ -13,6 +13,24 @@ TextEditingController kq_controller = TextEditingController();
 void main() {
   HttpOverrides.global = new MyHttpOverrides();
 
+  final List<String> dssanpham = <String>[
+    'Sản phẩm 1',
+    'Sản phẩm 2',
+    'Sản phẩm 3',
+    'Sản phẩm 4',
+    'Sản phẩm 5',
+    'Sản phẩm 6',
+    'Sản phẩm 7',
+    'Sản phẩm 8',
+    'Sản phẩm 9',
+    'Sản phẩm 10',
+    'Sản phẩm 11',
+    'Sản phẩm 12',
+    'Sản phẩm 13',
+    'Sản phẩm 14',
+    'Sản phẩm 15',
+  ];
+
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
@@ -20,35 +38,13 @@ void main() {
               appBar: AppBar(
                   title: Image.network(
                       'https://img.freepik.com/premium-vector/ho-chi-minh-city-vietnam-skyline-with-panorama-white-background-vector-illustration-business-travel-tourism-concept-with-modern-buildings-image-banner-web-site_596401-63.jpg?w=1060')),
-              body: ListView(
-                children: [
-                  ButtonSection(),
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    transform: Matrix4.rotationZ(-0.02),
-                    decoration: BoxDecoration(
-                        color: Color(0xffe389e3),
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: MyPlusWidget(),
-                  ),
-                  ButtonWithText(
-                      color: Colors.blueAccent,
-                      icon: Icons.access_alarm_rounded,
-                      label: 'Xin chao HCE'),
-                  Container(
-                    margin: const EdgeInsets.all(10.0),
-                    transform: Matrix4.rotationZ(0.02),
-                    decoration: BoxDecoration(
-                        color: Color(0xff6a9abf),
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: MyStatePlusWidget(),
-                  ),
-                  Row(
-                    children: [Text("Cot 1"), Text("Cot 2"), Text("Cot 3")],
-                  ),
-                  MyStatePlusWidget(),
-                  MyStatePlusWidget(),
-                  MyStatePlusWidget(),
-                ],
-              )))));
+              body: ListView.builder(
+                  itemCount: dssanpham.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      height: 50,
+                      child:
+                          Text('Ten san phảm:' + dssanpham[index].toString()),
+                    );
+                  })))));
 }
