@@ -23,7 +23,14 @@ void main() {
               body: Column(
                 children: [
                   ButtonSection(),
-                  MyPlusWidget(),
+                  Container(
+                    margin: const EdgeInsets.all(10.0),
+                    transform: Matrix4.rotationZ(0.02),
+                    decoration: BoxDecoration(
+                        color: Color(0xffe389e3),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: MyPlusWidget(),
+                  ),
                   ButtonWithText(
                       color: Colors.blueAccent,
                       icon: Icons.access_alarm_rounded,
@@ -36,6 +43,9 @@ void main() {
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: MyStatePlusWidget(),
                   ),
+                  Column(
+                    children: [Text("Hang 1"), Text("Hang 2"), Text("Hang 3")],
+                  )
                 ],
               )))));
 }
