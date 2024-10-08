@@ -28,7 +28,14 @@ void main() {
                       color: Colors.blueAccent,
                       icon: Icons.access_alarm_rounded,
                       label: 'Xin chao HCE'),
-                  MyStatePlusWidget()
+                  Container(
+                    margin: const EdgeInsets.all(10.0),
+                    transform: Matrix4.rotationZ(0.02),
+                    decoration: BoxDecoration(
+                        color: Color(0xff6a9abf),
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: MyStatePlusWidget(),
+                  ),
                 ],
               )))));
 }
