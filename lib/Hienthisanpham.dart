@@ -63,7 +63,27 @@ class ListProductState extends State<Hienthisanpham> {
                                             products[index].image.toString(),
                                             fit: BoxFit.cover,
                                           )))),
-                              Text(products[index].title.toString()),
+                              ListTile(
+                                title: Text(
+                                  products[index].title.toString(),
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16.0,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow
+                                      .ellipsis, // Cắt bớt text nếu quá dài
+                                ),
+                                subtitle: Text(
+                                  "\$${products[index].price.toString()}",
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                trailing: Icon(Icons
+                                    .shopping_cart_outlined), // Biểu tượng giỏ hàng
+                              ),
                             ],
                           ));
                 })));
