@@ -3,6 +3,7 @@ import 'models/Product.dart';
 import 'models/Cart.dart';
 import 'package:http/http.dart' as http; /*Thư viện kết nối backend*/
 import 'dart:convert'; /*Xử lý json */
+import "dart:convert" show utf8;
 
 class ProductDetailsAPI extends StatefulWidget {
   Product product;
@@ -45,6 +46,9 @@ class ProductDetailsAPIState extends State<ProductDetailsAPI> {
 
   @override
   Widget build(BuildContext context) {
+    var description1 =
+        utf8.decode(product.description.toString().runes.toList());
+
     return Scaffold(
       appBar: AppBar(
         title: Text(product.title ?? "No Title"),
@@ -82,7 +86,7 @@ class ProductDetailsAPIState extends State<ProductDetailsAPI> {
               ),
               SizedBox(height: 10),
               Text(
-                product.description ?? "No description available",
+                description1 ?? "No description available",
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(height: 30),
