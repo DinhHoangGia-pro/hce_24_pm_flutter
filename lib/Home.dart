@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:helloworld/CartScreen.dart';
+import 'package:helloworld/CartScreenAPI.dart';
 import 'package:helloworld/Hienthisanpham.dart';
 import 'package:helloworld/ListProductAPI.dart';
 
@@ -27,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = [
     ListProductAPI(),
     Hienthisanpham(),
-    CartScreen(),
+    CartScreenAPI(),
   ];
 
   // Function to handle tab switching
